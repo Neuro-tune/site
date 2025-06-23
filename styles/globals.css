@@ -2,9 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base page styles */
 body {
-  @apply bg-background text-white antialiased;
-  margin: 0;
-  font-family: 'Inter', sans-serif;
+  @apply bg-background text-white font-sans antialiased m-0 p-0;
+}
+
+/* Сброс видео-контейнера */
+video {
+  @apply block;
 }

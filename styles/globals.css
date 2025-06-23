@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Base page styles */
+body {
+  @apply bg-background text-white antialiased;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}

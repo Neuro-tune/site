@@ -1,12 +1,3 @@
-module.exports = {
-  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
-
-// pages/index.tsx
 import { Hero } from '../components/Hero';
 import { Features } from '../components/Features';
 import { Invite } from '../components/Invite';
@@ -15,7 +6,7 @@ import { DemoCarousel } from '../components/DemoCarousel';
 
 export default function Home() {
   return (
-    <main className="bg-gray-50 min-h-screen">
+    <main className="bg-gray-900 text-white">
       <Hero />
       <Features />
       <DemoCarousel />

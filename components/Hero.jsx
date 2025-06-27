@@ -1,49 +1,29 @@
+import { Button } from 'shadcn-ui';
+import { Music } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-export default function Hero() {
+export function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center bg-black text-white text-center px-6 py-20">
+    <section className="text-center py-20">
       <motion.h1
-        className="text-5xl md:text-6xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400"
-        initial={{ opacity: 0, y: -50 }}
+        initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.6 }}
+        className="text-4xl md:text-6xl font-bold mb-4"
       >
-        Neuro•Tune
+        NeuroTune — Ваш музыкальный бот для Discord
       </motion.h1>
       <motion.p
-        className="text-xl md:text-2xl mb-6 text-gray-300"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
+        transition={{ delay: 0.3, duration: 0.6 }}
+        className="text-lg text-gray-600 mb-8 max-w-xl mx-auto"
       >
-        Музыка. Эффекты. Эмоции.
+        Полный контроль над плейлистами, высокое качество звучания, совместимые команды.
       </motion.p>
-      <motion.div
-        className="space-x-4 mb-8"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
-      >
-        <div className="relative group inline-block">
-          <div className="absolute -inset-[2px] rounded-xl bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 blur opacity-75 group-hover:opacity-100 transition"></div>
-          <a
-            href="https://discord.com/oauth2/authorize?client_id=YOUR_ID"
-            className="relative px-6 py-3 font-semibold text-white bg-black rounded-xl z-10"
-          >
-            Добавить в Discord
-          </a>
-        </div>
-        <a
-          href="#features"
-          className="relative inline-block px-6 py-3 rounded-xl overflow-hidden group"
-        >
-          <span className="absolute inset-0 border-2 rounded-xl bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-clip-border group-hover:animate-gradientBorder"></span>
-          <span className="relative block bg-black text-white font-medium text-center">
-            Узнать больше
-          </span>
-        </a>
-      </motion.div>
+      <Button size="lg" className="rounded-2xl shadow-lg px-8">
+        Пригласить бота <Music className="ml-2" />
+      </Button>
     </section>
   );
 }

@@ -8,6 +8,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "three": "^0.158.0",
+    "vanta": "^0.5.24"
     "next": "14.x",
     "react": "18.x",
     "react-dom": "18.x",

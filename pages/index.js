@@ -1,23 +1,26 @@
-import Head from 'next/head';
-import Hero from '../components/Hero';
-import Features from '../components/Features';
-import Commands from '../components/Commands';
-import Footer from '../components/Footer';
+module.exports = {
+  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+
+// pages/index.tsx
+import { Hero } from '../components/Hero';
+import { Features } from '../components/Features';
+import { Invite } from '../components/Invite';
+import { Footer } from '../components/Footer';
+import { DemoCarousel } from '../components/DemoCarousel';
 
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Neuro•Tune — Музыкальный Discord-бот</title>
-        <meta name="description" content="Neuro•Tune — музыка с эффектами, автодиджей и mood-настройки." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </Head>
-      <main className="font-sans bg-black text-white">
-        <Hero />
-        <Features />
-        <Commands />
-        <Footer />
-      </main>
-    </>
+    <main className="bg-gray-50 min-h-screen">
+      <Hero />
+      <Features />
+      <DemoCarousel />
+      <Invite />
+      <Footer />
+    </main>
   );
 }

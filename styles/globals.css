@@ -2,30 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-background text-white font-sans antialiased m-0 p-0;
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-/* Сброс видео-контейнера */
-video {
-  @apply block;
-}
-@keyframes gradientAnimation {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-.animate-\[gradientAnimation_12s_ease_infinite\] {
-  background-size: 200% 200%;
-  animation: gradientAnimation 12s ease infinite;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-/* Кнопка с градиентной обводкой при наведении */
-.group-hover\:animate-gradientBorder:hover {
-  animation: gradientBorder 4s ease infinite;
+* {
+  box-sizing: border-box;
 }
 
-@keyframes gradientBorder {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+// pages/_app.jsx
+import { useEffect, useRef, useState } from 'react'
+import dynamic from 'next/dynamic'
+import '../styles/globals.css'
+import * as THREE from 'three'
+
+const VANTA = dynamic(
+  () => import('vanta/dist/vanta.net.min').then(mod => mod.default),
+  { ssr: false }
+)
+
+function MyApp({ Component, pageProps }) {
+  const [vantaEffect, setVantaEffect] = useState(null)
+  const vantaRef = useRef(null)
+
+  useEffect(() => {
+    if (!vantaEffect) {
+      setVantaEffect(
+        VANTA({
+          el: vantaRef.current,
+          THREE,
+          color: 0x00bfff,
+          backgroundColor: 0x0f172a,
+          points: 12.0,
+          maxDistance: 20.0,
+        })
+      )
+    }
+    return () => vantaEffect && vantaEffect.destroy()
+  }, [vantaEffect])
+
+  return (
+    <div ref={vantaRef} className="min-h-screen">
+      <Component {...pageProps} />
+    </div>
+  )
 }
+
+export default MyApp

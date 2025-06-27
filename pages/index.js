@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Hero from '../components/Hero';
 import Features from '../components/Features';
-import Demo from '../components/Demo';
 import Commands from '../components/Commands';
 import Footer from '../components/Footer';
 
@@ -16,7 +15,6 @@ export default function Home() {
       <main className="font-sans bg-black text-white">
         <Hero />
         <Features />
-        <Demo />
         <Commands />
         <Footer />
       </main>

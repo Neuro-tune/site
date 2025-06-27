@@ -14,6 +14,8 @@
     "tailwindcss": "latest",
     "shadcn-ui": "latest",
     "lucide-react": "latest",
-    "framer-motion": "latest"
+    "framer-motion": "latest",
+    "three": "latest",
+    "vanta": "latest"
   }
 }

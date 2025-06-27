@@ -17,7 +17,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.6 }}
-        className="text-lg text-gray-600 mb-8 max-w-xl mx-auto"
+        className="text-lg text-gray-300 mb-8 max-w-xl mx-auto"
       >
         Полный контроль над плейлистами, высокое качество звучания, совместимые команды.
       </motion.p>

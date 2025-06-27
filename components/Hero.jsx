@@ -25,9 +25,16 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8 }}
       >
-        <a href="https://discord.com/oauth2/authorize?client_id=YOUR_ID&scope=bot" className="px-6 py-3 bg-purple-600 rounded-xl shadow-lg hover:bg-purple-500 transition">
-          ➕ Добавить на сервер
-        </a>
+        <div className="relative group inline-block mt-6">
+  <div className="absolute -inset-[2px] rounded-lg bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 blur opacity-75 group-hover:opacity-100 transition"></div>
+  <a
+    href="https://discord.com/oauth2/authorize?client_id=..." 
+    className="relative px-6 py-3 font-semibold text-white bg-black rounded-lg border z-10"
+  >
+    Добавить в Discord
+  </a>
+  </div>
+
         <a href="#features" className="px-6 py-3 border border-purple-600 rounded-xl hover:bg-purple-600 transition">
           Узнать больше
         </a>
